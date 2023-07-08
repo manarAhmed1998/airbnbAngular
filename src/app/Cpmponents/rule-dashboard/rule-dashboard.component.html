@@ -1,0 +1,87 @@
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card shadow">
+          <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
+            <h4 class="card-title mb-0">Rules</h4>
+           
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              + Add Role
+            </button>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive" style="padding-left:50px ; padding-right:50px ;">
+              <table class="table table-hover">
+                <thead>
+                  <tr  >
+                    <th>Id</th>
+                    <th>Role</th>
+                  </tr>
+                </thead>
+                <tbody>
+                   <!-- <tr *ngFor="let rule of rules" > -->
+                    <!-- <td>{{ rule.id }}</td>
+                    <td>{{rule.rule}}</td>
+                  </tr> -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h2 class="modal-title" id="myModalLabel">Add Role</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  
+        </div>
+        <!-- <form>
+          <div class="modal-body">
+            
+           
+            <br>
+            <div class="form-group">
+                <label for="imageInput">Image</label>
+                <input type="file" class="form-control-file" id="imageInput" name="image">
+              </div>
+              <br><br>
+              <div class="form-group">
+                <label for="contentInput">Content</label>
+                <textarea class="form-control" id="contentInput" name="content" rows="3"></textarea>
+              </div>
+            </div>
+          
+          <br>
+          <br>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </form> -->
+        <form #ruleForm="ngForm">
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="imageInput">Image</label>
+              <input type="file" class="form-control-file" id="imageInput" name="image" [(ngModel)]="imageUrl">
+            </div>
+            <div class="form-group">
+              <label for="contentInput">Content</label>
+              <!-- <textarea class="form-control" id="contentInput" name="content" rows="3" [(ngModel)]="content"></textarea> -->
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <!-- <button type="button" class="btn btn-primary" (click)="addRules(ruleForm)">Save changes</button> -->
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+ 

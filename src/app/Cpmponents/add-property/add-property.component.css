@@ -1,0 +1,113 @@
+.container{
+
+  
+    margin:0 auto;
+}
+.example-stepper {
+    margin-top: 40px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+
+  
+  
+  
+  
+  .mat-step-header {
+    display: flex;
+    
+      
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  .mat-step-header .mat-step-icon {
+    background-color: #f7f7f7;
+    border-radius: 50%;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+  }
+  
+  .mat-step-header .mat-step-icon .mat-icon {
+    font-size: 24px;
+    color: #f7f7f7;
+  }
+  
+  .mat-step-header .mat-step-label {
+    font-size: 18px;
+    font-weight: 600;
+
+  }
+  
+  .mat-horizontal-stepper-header-container {
+    justify-content: flex-start;
+  }
+  
+  .mat-step-header:not(.mat-step-header-selected) {
+    opacity: 0.5;
+  }
+  
+  .mat-step-header:not(.mat-step-header-completed) .mat-step-icon {
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 2px solid #eaeaea;
+  }
+  
+  .mat-step-header:not(.mat-step-header-completed) .mat-step-icon .mat-icon {
+    color: #eaeaea;
+  }
+  
+  .mat-step-header-completed .mat-step-icon {
+    background-color: #1976d2;
+    border: none;
+  }
+  
+  .stepper-button-left {
+    margin-right: auto;  }
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+    }
+  .stepper-button-right {
+margin-left: auto;  }
+  .mat-step-header-completed .mat-step-icon .mat-icon {
+    color: #fff;
+  }
+  
+  /* Style the form fields */
+  
+  
+  /* Style the buttons */
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .mat-raised-button {
+    background-color: #1976d2;
+    color: #fff;
+  }
+  
+  /* Style the error messages */
+  .error-message {
+    color: #f44336;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  /* .mat-card-title {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    color: #f44336;
+    text-transform: uppercase;
+    margin: 20px 0;
+  } */
+  /* Custom styles for the number input arrows */
+

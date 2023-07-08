@@ -1,0 +1,222 @@
+<div class="container">
+ 
+  <div class="row col-12 col-sm-6 col-md-12">
+    <div class="h3" style="padding-left: 40px; color: rgb(70, 70, 70)">
+      {{card.description}}
+      <br />
+      <span id="Rating"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          fill="currentColor"
+          class="bi bi-star-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+          />
+        </svg>
+        {{card.rating}}
+      </span>
+      <span id="renter">{{card.host.name}}</span>
+    </div>
+
+
+    <div class="container">
+      <div id="largeimg1">
+        <img
+          src="{{card.rooms[0].images[0]}}"
+          alt="Image 1"
+        />
+      </div>
+      <div id="smallimages2">
+        <div class="col-sm-12 col-md-12" id="2a">
+          <img
+            src="{{card.rooms[0].images[1]}}"
+            alt="Image 2"
+          />
+        </div>
+  
+        <div class="col-sm-12 col-md-12" id="2b">
+          <img
+            src="{{card.rooms[0].images[2]}}"
+            alt="Image 3"
+          />
+        </div>
+      </div>
+      <div id="smallimages3">
+        <div class="col-sm-12 col-md-12" id="2c">
+          <img
+            src="{{card.rooms[0].images[3]}}"
+            alt="Image 4"
+          />
+        </div>
+        <div class="col-sm-12 col-md-12" id="2d">
+          <img
+            src="{{card.rooms[0].images[4]}}"
+            alt="Image 5"
+          />
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <hr>
+  <div class="row container" >
+    
+   <div class=" smaller-container col-4" style="margin-right: 420px;">
+    <div class="rooms container  ">
+      <h1>Where you'll sleep</h1>
+      <!-- list of rooms -->
+      <ul>
+        <li>
+          <div class="card" style="width: 18rem;">
+            <div class="card-header">
+              1: {{card.rooms[0].roomType}}
+            </div>
+            <ul class="list-group list-group-flush">
+              <li><div style="border: hidden;" *ngIf="card.rooms[1].roomType=='bedroom'" class="list-group-item">2 single beds></div></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="card" style="width: 18rem;">
+            <div class="card-header">
+              2: {{card.rooms[1].roomType}}            
+            </div>
+            <ul class="list-group list-group-flush">
+              <li><div style="border: hidden;" *ngIf="card.rooms[2].roomType=='Bedroom'" class="list-group-item">2 single beds</div></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="amineties">
+      <h1>What this place offers</h1>
+<!-- list of Aminities -->
+      <ul>
+        <li>
+          <img width="30" height="30" src="https://img.icons8.com/dotty/80/washing.png" alt="washing"/><span style="margin-left: 10px; font-size: larger;">Washer</span>
+        </li>
+        <li>
+          <img width="30" height="30" src="https://img.icons8.com/dotty/80/washing.png" alt="washing"/><span style="margin-left: 10px; font-size: larger;">Washer</span>
+        </li>
+        <li>
+          <img width="30" height="30" src="https://img.icons8.com/dotty/80/washing.png" alt="washing"/><span style="margin-left: 10px; font-size: larger;">Washer</span>
+        </li>
+        <li>
+          <img width="30" height="30" src="https://img.icons8.com/dotty/80/washing.png" alt="washing"/><span style="margin-left: 10px; font-size: larger;">Washer</span>
+        </li>
+        <li>
+          <img width="30" height="30" src="https://img.icons8.com/dotty/80/washing.png" alt="washing"/><span style="margin-left: 10px; font-size: larger;">Washer</span>
+        </li>
+      </ul>
+    </div>
+    <div class="rules">
+      <h1>What is are the rules here</h1>
+<!-- list of rules -->
+      <ul>
+        <li>
+          <img width="30" height="30" src="https://img.icons8.com/dotty/80/washing.png" alt="washing"/><span style="margin-left: 10px; font-size: larger;">Washer</span>
+        </li>
+        <li>
+          <img width="30" height="30" src="https://img.icons8.com/dotty/80/washing.png" alt="washing"/><span style="margin-left: 10px; font-size: larger;">Washer</span>
+        </li>
+        <li>
+          <img width="30" height="30" src="https://img.icons8.com/dotty/80/washing.png" alt="washing"/><span style="margin-left: 10px; font-size: larger;">Washer</span>
+        </li>
+        <li>
+          <img width="30" height="30" src="https://img.icons8.com/dotty/80/washing.png" alt="washing"/><span style="margin-left: 10px; font-size: larger;">Washer</span>
+        </li>
+        <li>
+          <img width="30" height="30" src="https://img.icons8.com/dotty/80/washing.png" alt="washing"/><span style="margin-left: 10px; font-size: larger;">Washer</span>
+        </li>
+      </ul>
+    </div>
+   </div>
+   <!-- floating menu -->
+    <div class="col-3 floating-menu shadow p-3 mb-5 bg-white rounded" style="height: fit-content;">
+      <span id="price"
+        >{{card.rating}} EGP<span style="font-weight: 100; font-size: medium">
+          night</span
+        ></span
+      >
+      <span id="Rating"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          fill="currentColor"
+          class="bi bi-star-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+          />
+        </svg>
+        {{card.rating}} </span
+      ><br /><br />
+      <form>
+        <mat-form-field>
+          <mat-label>Choose a check-in date</mat-label>
+          <input matInput [min]="minDate" [matDatepicker]="checkInPicker"
+              placeholder="Check-in" (dateInput)="onCheckInDateChange()" [(ngModel)]="startDate">
+          <mat-hint>Disabled dates are reserved.</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="checkInPicker"></mat-datepicker-toggle>
+          <mat-datepicker #checkInPicker></mat-datepicker>
+      </mat-form-field>
+             <!-- datePicker -->
+             <!-- <mat-form-field class="container">
+              <mat-label>Enter a date range</mat-label>
+              <mat-date-range-input [rangePicker]="picker">
+                <input matStartDate placeholder="Start date" [min]="minDate" [(ngModel)]="startDate" (dateInput)="onCheckInDateChange()"/>
+                <input matEndDate placeholder="End date" [(ngModel)]="endDate" (dateInput)="onCheckInDateChange()"/>
+              </mat-date-range-input>
+              <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-date-range-picker
+                #picker
+              ></mat-date-range-picker> </mat-form-field
+            ><br /><br />  -->
+
+        <div class="col-12 form-outline">
+          <label class="form-label" for="guestNum">Guests</label>
+          <input id="guestNum" type="number" class="form-control" />
+        </div>
+        <br /><br />
+
+        <button type="submit" class="container btn btn-danger"  data-bs-toggle="modal" data-bs-target="#exampleModal">Reserve</button>
+        <hr />
+        <span style="font-weight: bold; font-size: large">Total</span>
+        <span id="total">400<span>EGP</span></span>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+

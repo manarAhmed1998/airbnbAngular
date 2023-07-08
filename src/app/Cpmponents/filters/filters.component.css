@@ -1,0 +1,203 @@
+.content-container {
+    text-align: center;
+}
+/* range price section*/
+.value-input {
+    width: 200px;
+    text-align: center;
+    display:inline-block;
+    margin-left: 10px;
+}
+.label{
+    display:inline-block;
+
+}
+/* end of range price section*/
+
+
+/* bedrooms Section*/
+ #bedrooms, #beds{
+    padding-left: 30px;
+}
+
+.Bedroom-Radios {
+    margin-top: 10px;
+    padding-left: 60px;
+
+  }
+  
+  .RoomsandBeds{
+    padding-left: 20px;
+
+  }
+
+
+.Bedroom-Radios {
+  margin-top: 10px;
+}
+
+.Bedroom-Radios .form-check span {
+  font-size: 16px;
+}
+
+.Bedroom-Radios .form-check span::after {
+  content: '  ';
+  margin-left: 5px;
+}
+/* end of bedrooms Section*/
+
+
+  
+ /*Beds Section*/
+
+
+.Beds-Radios {
+  margin-top: 10px;
+  padding-left: 60px;
+
+}
+
+.Beds-Radios .form-check span {
+  font-size: 16px;
+}
+
+.Beds-Radios .form-check span::after {
+  content: '  ';
+  margin-left: 5px;
+}
+
+
+ /* End Of Beds Section*/
+
+ #bathrooms{
+
+
+    padding-left: 30px;
+
+ }
+.Bathrooms-Radios {
+  margin-top: 10px;
+  padding-left: 60px;
+}
+
+.Bathrooms-Radios .form-check span {
+  font-size: 16px;
+}
+
+.Bathrooms-Radios .form-check span::after {
+  content: '  ';
+  margin-left: 5px;
+}
+
+/* End Of Bathroom Section*/
+
+/* Proberty type Section*/
+#Property-type{
+    padding-left: 20px;
+}
+
+
+#Home , #Guesthouse  , #Apartment{
+
+    display: inline-block;
+    margin-left: 100px;
+}
+
+#Hotel{
+
+    display: inline-block;
+    margin-left: 90px; 
+}
+
+
+/*Proberties Section*/
+  #proberties button {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  #proberties button.selected {
+    background-color: rgb(192, 184, 187);
+    color: rgb(255, 255, 255);
+    border: solid 3px rgb(67, 67, 67);
+    border-radius: 15px;
+    outline: none;
+    width: 120px;
+    height: 100px;
+  }
+
+/* End Of Proberty type Section*/
+
+/* Chexk boxes*/
+#Amenities{
+    padding-left: 20px;
+}
+.form-check-container{
+
+    padding-left: 30px;
+    cursor: pointer;
+}
+    .form-check2 input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+      
+      .form-check2 .form-check-label {
+        position: relative;
+        padding-left: 28px;
+        cursor: pointer;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      
+      .form-check2 .form-check-label:before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        position: absolute;
+        left: 0;
+        top: 1px;
+      }
+      
+      .form-check2 input[type="checkbox"]:checked + .form-check-label:before {
+        content: "\2713";
+        color: #fff;
+        background-color: #393939;
+        border-color: #3d3d3d;
+      }
+      
+      .form-check2 .form-check-input:focus + .form-check-label:before {
+        border-color: #262626;
+        box-shadow: 0 0 0 2px rgba(55, 55, 55, 0.25);
+      }
+      
+      .form-check2 .form-check-input:disabled + .form-check-label {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+      
+      .form-check-container {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      
+      .form-check-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+      
+      .form-check-row .form-check2 {
+        flex-basis: calc(50% - 5px);
+      }

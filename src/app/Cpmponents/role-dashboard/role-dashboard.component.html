@@ -1,0 +1,76 @@
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card shadow">
+          <div class="card-header bg-warning text-white d-flex justify-content-between align-items-center">
+            <h4 class="card-title mb-0">Roles</h4>
+           
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              + Add Role
+            </button>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive" style="padding-left:50px ; padding-right:50px ;">
+              <table class="table table-hover">
+                <thead>
+                  <tr  >
+                    <th>Id</th>
+                    <th>Role</th>
+                  </tr>
+                </thead>
+                <tbody>
+                   <tr *ngFor="let role of roles" >
+                    <td>{{ role.id }}</td>
+                    <td>{{role.role}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-warning text-white">
+          <h2 class="modal-title" id="myModalLabel">Add Role</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="idInput">ID</label>
+              <input type="text" class="form-control" id="idInput" name="id" placeholder="Enter the ID for the new amenity">
+            </div>
+            <br>
+            <br>
+           
+            <br>
+            <div class="form-group">
+              <label for="contentInput">Role</label>
+              <label for="select-option">Choose an option:</label>
+                    <select id="select-option" name="select-option">
+                    <option value="">Please choose an Role</option>
+                    <option value="option1">Guest</option>
+                    <option value="option2">Host</option>
+                    <option value="option3">Admin</option>
+                   
+                    </select>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

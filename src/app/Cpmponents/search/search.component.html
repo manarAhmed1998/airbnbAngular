@@ -1,0 +1,62 @@
+<style>
+  ::ng-deep .cdk-overlay-container {
+    z-index: 2000;
+  }
+</style>
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="searchModal"
+  tabindex="-1"
+  aria-labelledby="searchModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1
+          class="modal-title fs-5"
+          id="exampleModalLabel"
+          style="color: rgb(213, 34, 34)"
+        >
+          Book unique home and experiences
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form id="searchForm">
+          <div class="mb-3">
+            <!-- Price input -->
+            <label for="cityBtn" class="form-label">Where To?</label>
+            <input class="form-control value-input" id="cityBtn" />
+          </div>
+          <!-- datePicker -->
+          <mat-form-field class="container">
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+              <input matStartDate placeholder="Start date" />
+              <input matEndDate placeholder="End date" />
+            </mat-date-range-input>
+            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-danger">Search</button>
+      </div>
+    </div>
+  </div>
+</div>

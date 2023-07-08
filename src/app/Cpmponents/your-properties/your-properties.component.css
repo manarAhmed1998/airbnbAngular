@@ -1,0 +1,115 @@
+/*Buttons Section*/
+.carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    opacity: initial;
+    border-radius: 50%;
+  }
+  
+  /*button shape*/
+  #main-caurosel span {
+    display: inline-block;
+    padding: 10px 15px;
+    transition: background-color 0.1s ease;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 15px;
+    height: 15px;
+    border-radius: 50% !important;
+  }
+  
+  /*Hovering*/
+  .carousel-control-prev,
+  .carousel-control-next {
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+  #main-caurosel:hover .carousel-control-prev,
+  #main-caurosel:hover .carousel-control-next {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  /*End Of Buttons Section*/
+  
+  /* Cards Section Layout*/
+  .carousel-inner {
+    border-radius: 15px;
+  }
+  
+  img {
+    width: 304px;
+    height: 289px;
+  }
+  
+  li {
+    list-style: none;
+    width: 304px;
+  }
+  
+  /*  End Of Cards Section Layout*/
+  
+  /*Paragraphs Section*/
+  
+  #card-body {
+    width: 304px;
+    height: 102px;
+  }
+  
+  #Location {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+      Helvetica Neue, sans-serif;
+    font-size: 16px;
+  }
+  div #Duration #distance {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: rgb(134, 131, 131);
+    padding-left: 0px;
+    line-height: 1px;
+  }
+  
+  div p #Price {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+      Helvetica Neue, sans-serif;
+    font-size: 16px;
+  }
+  
+  #Rating {
+    padding-bottom: 200px;
+    padding-left: 110px;
+    position: relative;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+  }
+  
+  #card-body p {
+    margin: 5px;
+  }
+  
+  #distance {
+    color: grey;
+  }
+  
+  /* End Of Paragraphs Section*/
+  
+  /*Like Icon*/
+  .like-icon {
+    position: absolute;
+    margin-top: 3%;
+    margin-left: 83%;
+    z-index: 1;
+    width: 15px;
+    height: 15px;
+    visibility: hidden;
+  }
+  
+  #main-caurosel:hover .like-icon {
+    visibility: visible;
+  }
+  

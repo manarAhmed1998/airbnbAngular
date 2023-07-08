@@ -1,0 +1,66 @@
+{
+    "propertyTypes": ["apartment", "house"],
+    "countries": [
+      {
+        "name": "Egypt",
+        "cities": ["Cairo", "Alexandria", "Luxor"]
+      },
+      {
+        "name": "UAE",
+        "cities": ["Dubai", "Abu Dhabi", "Sharjah"]
+      }
+    ],
+    "propertyRules": ["No smoking", "No pets", "No parties"],
+    "amenities": ["WiFi", "Air conditioning", "Pool", "Gym", "24-hour security"],
+    "properties": [
+      {
+        "id": 1,
+        "propertyType": "house",
+        "pricePerNight": 100,
+        "insuranceTax": 5,
+        "description": "A beautiful house with stunning views",
+        "address": {
+          "country": "Egypt",
+          "city": "Cairo",
+          "street": "123 Main St"
+        },
+        "houseRules": ["No smoking", "No pets", "No parties"],
+        "amenities": ["WiFi", "Air conditioning", "Pool"],
+        "rooms": [
+          {
+            "type": "bedroom",
+            "beds": 2
+          },
+          {
+            "type": "kitchen"
+          },
+          {
+            "type": "living room"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "propertyType": "apartment",
+        "pricePerNight": 75,
+        "insuranceTax": 4,
+        "description": "A cozy apartment in the heart of the city",
+        "address": {
+          "country": "UAE",
+          "city": "Dubai",
+          "street": "456 Park Ave"
+        },
+        "houseRules": ["No smoking", "No pets"],
+        "amenities": ["WiFi", "Gym", "24-hour security"],
+        "rooms": [
+          {
+            "type": "bedroom",
+            "beds": 1
+          },
+          {
+            "type": "living room"
+          }
+        ]
+      }
+    ]
+  }

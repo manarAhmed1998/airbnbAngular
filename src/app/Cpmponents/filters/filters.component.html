@@ -1,0 +1,461 @@
+<div class="container">
+  <div class="form-group">
+    <form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="filtersModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title">Filters</h1>
+        </div>
+        <div class="modal-body">
+          <div class="content-container">
+            <h2 style="color: rgb(101, 98, 98)">price range</h2>
+            <div class="mb-3">
+              <!-- Price input -->
+              <label for="minPriceInput" class="form-label">from:</label>
+              <input #FilterPriceInput
+                type="number"
+                class="form-control value-input"
+
+              />
+            </div>
+            <div class="mb-3">
+              <!-- Price input -->
+              <label for="maxPriceInput" class="form-label">to:</label>
+              <input #FilterPriceInput
+                type="number"
+                class="form-control-name value-input"
+                id="maxPriceInput"
+                value=""
+              />
+            </div>
+
+            <div id="errorDiv" class="text-danger"></div>
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- bedrooms section -->
+        <h2 class="RoomsandBeds">Rooms and beds</h2>
+
+        <label id="bedrooms">Bedrooms</label>
+
+        <div class="Bedroom-Radios">
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault1">
+              <span>1</span>
+              <input #BedroomFilterInput
+                class="form-check-input"
+                type="radio"
+                name="Bedrooms"
+                id="flexRadioDefault1"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault2">
+              <span>2</span>
+              <input #BedroomFilterInput
+                class="form-check-input"
+                type="radio"
+                name="Bedrooms"
+                id="flexRadioDefault2"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault3">
+              <span>3</span>
+              <input #BedroomFilterInput
+                class="form-check-input"
+                type="radio"
+                name="Bedrooms"
+                id="flexRadioDefault3"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault4">
+              <span>4</span>
+              <input #BedroomFilterInput
+                class="form-check-input"
+                type="radio"
+                name="Bedrooms"
+                id="flexRadioDefault4"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault5">
+              <span>5</span>
+              <input #BedroomFilterInput
+                class="form-check-input"
+                type="radio"
+                name="Bedrooms"
+                id="flexRadioDefault5"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault6">
+              <span>6</span>
+              <input
+                class="form-check-input"
+                type="radio"
+                name="Bedrooms"
+                id="flexRadioDefault6"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault7">
+              <span>7</span>
+              <input #BedroomFilterInput
+                class="form-check-input"
+                type="radio"
+                name="Bedrooms"
+                id="flexRadioDefault7"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault8">
+              <span>8</span>
+              <input #BedroomFilterInput
+                class="form-check-input"
+                type="radio"
+                name="Bedrooms"
+                id="flexRadioDefault8"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault9">
+              <span>9</span>
+              <input #BedroomFilterInput
+                class="form-check-input"
+                type="radio"
+                name="Bedrooms"
+                id="flexRadioDefault9"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefaultAny">
+              <span>Any</span>
+              <input #BedroomFilterInput
+                class="form-check-input"
+                type="radio"
+                name="Bedrooms"
+                id="flexRadioDefault10"
+              />
+            </label>
+          </div>
+        </div>
+        <br /><br />
+        <!-- Beds Section -->
+
+        <label id="beds">Beds</label>
+
+        <div class="Beds-Radios">
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault1">
+              <span>1</span>
+              <input #BedFilterInput
+                class="form-check-input"
+                type="radio"
+                name="Beds"
+                id="flexRadioDefault1"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault2">
+              <span>2</span>
+              <input #BedFilterInput
+                class="form-check-input"
+                type="radio"
+                name="Beds"
+                id="flexRadioDefault2"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault3">
+              <span>3</span>
+              <input #BedFilterInput
+                class="form-check-input"
+                type="radio"
+                name="Beds"
+                id="flexRadioDefault3"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault4">
+              <span>4</span>
+              <input #BedFilterInput
+                class="form-check-input"
+                type="radio"
+                name="Beds"
+                id="flexRadioDefault4"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault5">
+              <span>5</span>
+              <input #BedFilterInput
+                class="form-check-input"
+                type="radio"
+                name="Beds"
+                id="flexRadioDefault5"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault6">
+              <span>6</span>
+              <input #BedFilterInput
+                class="form-check-input"
+                type="radio"
+                name="Beds"
+                id="flexRadioDefault6"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault7">
+              <span>7</span>
+              <input #BedFilterInput
+                class="form-check-input"
+                type="radio"
+                name="Beds"
+                id="flexRadioDefault7"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault8">
+              <span>8</span>
+              <input #BedFilterInput
+                class="form-check-input"
+                type="radio"
+                name="Beds"
+                id="flexRadioDefault8"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault9">
+              <span>9</span>
+              <input #BedFilterInput
+                class="form-check-input"
+                type="radio"
+                name="Beds"
+                id="flexRadioDefault9"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefaultAny">
+              <span>Any</span>
+              <input #BedFilterInput
+                class="form-check-input"
+                type="radio"
+                name="Beds"
+                id="flexRadioDefault10"
+              />
+            </label>
+          </div>
+        </div>
+        <br /><br />
+        <!-- Bathrooms -->
+        <label id="bathrooms">Bathrooms</label>
+
+        <div class="Bathrooms-Radios">
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault1">
+              <span>1</span>
+              <input #BathroomFilterInput
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault1"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault2">
+              <span>2</span>
+              <input  #BathroomFilterInput
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault2"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault3">
+              <span>3</span>
+              <input #BathroomFilterInput
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault3"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault4">
+              <span>4</span>
+              <input #BathroomFilterInput
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault4"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault5">
+              <span>5</span>
+              <input #BathroomFilterInput
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault5"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault6">
+              <span>6</span>
+              <input #BathroomFilterInput
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault6"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault7">
+              <span>7</span>
+              <input #BathroomFilterInput
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault7"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault8">
+              <span>8</span>
+              <input #BathroomFilterInput 
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault8"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefault9">
+              <span>9</span>
+              <input #BathroomFilterInput
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault9"
+              />
+            </label>
+          </div>
+          <div class="form-check d-inline-block">
+            <label class="form-check-label" for="flexRadioDefaultAny">
+              <span>Any</span>
+              <input #BathroomFilterInput
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault10"
+              />
+            </label>
+          </div>
+        </div>
+        <br /><br />
+        <hr />
+
+        <!-- proberty type -->
+
+        <h2 id="Property-type">Property type</h2>
+        <div id="proberties">
+          <button id="Home">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="3em"
+              viewBox="0 0 576 512"
+            >
+              <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <style>
+                svg {
+                  fill: #292929;
+                }
+              </style>
+              <path
+                d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"
+              />
+            </svg>
+            <p>Home</p>
+          </button>
+          <button id="Apartment">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="3em"
+              viewBox="0 0 384 512"
+            >
+              <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <style>
+                svg {
+                  fill: #424242;
+                }
+              </style>
+              <path
+                d="M48 0C21.5 0 0 21.5 0 48V464c0 26.5 21.5 48 48 48h96V432c0-26.5 21.5-48 48-48s48 21.5 48 48v80h96c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48H48zM64 240c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V240zm112-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm80 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H272c-8.8 0-16-7.2-16-16V240zM80 96h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16zm80 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V112zM272 96h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H272c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16z"
+              />
+            </svg>
+            <p>Apartment</p>
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary">
+         
+          
+            Apply
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </form>
+  </div>
+</div>
