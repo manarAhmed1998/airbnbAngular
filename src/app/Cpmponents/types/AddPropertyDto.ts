@@ -7,7 +7,6 @@ export class AddPropertyDto{
  countryId:string='';
  cityId:string='';
  street:string='';
- hostId:string='';
  noOfBeds:string='';
  noOfBedRooms:string='';
  noOfBathRooms:string='';

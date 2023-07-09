@@ -112,9 +112,9 @@ i:number=0;
       rules: this._formBuilder.array(this.houseRules.map(() => false)),
     });
     this.fifthFormGroup = this._formBuilder.group({
-      numberOfBedRooms: ["", Validators.required],
-      numberOfBeds: ["", Validators.required],
-      numberOfBathRooms: ["", Validators.required],
+      noOfBedRooms: ["",Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)(\.\d+)?$/)],
+      noOfBeds: ["",Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)(\.\d+)?$/)],
+      noOfBathRooms: ["",Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)(\.\d+)?$/)],
     });
 
     this.stepperOrientation = this.getStepperOrientation();
@@ -139,6 +139,7 @@ i:number=0;
     propertyToAdd.noOfBathRooms=fifthformValues.noOfBathRooms;
     propertyToAdd.noOfBedRooms=fifthformValues.noOfBathRooms;
     propertyToAdd.noOfBeds=fifthformValues.noOfBeds;
+
     console.log(propertyToAdd);
     this._http.post
     ('http://localhost:5073/api/Property/Add-Property', propertyToAdd).subscribe({
