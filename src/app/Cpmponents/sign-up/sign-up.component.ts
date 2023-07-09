@@ -7,6 +7,7 @@ import { MatDialogModule ,MatDialogRef,MatDialogConfig,MatDialog} from '@angular
 import { HttpClient } from '@angular/common/http';
 import { SignInComponent } from '../sign-in/sign-in.component';
 import { SignUpDto } from '../types/SignUpDto';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -14,7 +15,7 @@ import { SignUpDto } from '../types/SignUpDto';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent {
-constructor(private http: HttpClient, public dialog: MatDialog, public dialogRef: MatDialogRef<SignInComponent>){
+constructor(private http: HttpClient, public dialog: MatDialog, public dialogRef: MatDialogRef<SignInComponent>, private router:Router){
 
 }
   hide = true;
@@ -170,6 +171,7 @@ return'';
       .subscribe({
         next: (res) => {
           console.log('Sign-up successful!', res);
+          this.router.navigateByUrl('/');
           // navigate to a success page or display a success message
         },
         error:(err)=> {

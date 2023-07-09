@@ -11,16 +11,10 @@
               </ul>
 
         </div>
-        <button type="button" class="btn btn-outline-danger btn-lg"  style="margin-left: 750px;" routerLink="/add-property">Continue Advertisment</button>
-       
-     
+        <button type="button" class="btn btn-outline-danger btn-lg"  style="margin-left: 750px;" routerLink="/add-property">Continue Advertisment</button>  
           </div>
-         
-         
+   
         <br><br>
-
-
-        
         <div class="container" >
           <div class="row">
             <div class="col-md-12">
@@ -37,10 +31,33 @@
                           <th>Check In</th>
                           <th>Check Out</th>
                           <th>Number of guest</th>
+                          <th>Status</th>
                           <th>Price</th>
 
                         </tr>
                       </thead>
+
+                      <tbody>
+                        <tr *ngFor="let res of reservations">
+                          <td>
+                            <tr>
+                              {{res.checkInDate}}
+                            </tr>
+                            <tr>
+                              {{res.checkOutDate}}
+                            </tr>
+                            <tr>
+                              {{res.numberOfGuests}}
+                            </tr>
+                            <tr>
+                              {{res.status}}
+                            </tr>
+                            <tr>
+                              {{res.totalPrice}}
+                            </tr>
+                          </td>
+                        </tr>
+                      </tbody>
                     
                     </table>
                   </div>

@@ -8,10 +8,7 @@
         <div *ngSwitchCase="'vertical'"></div>
       </ng-container>
 
-      <mat-stepper
-        class="mat-stepper"
-        [orientation]="(stepperOrientation | async)!"
-      >
+      <mat-stepper class="mat-stepper" [orientation]="(stepperOrientation | async)!">
         <mat-step [stepControl]="firstFormGroup">
           <ng-template matStepLabel>Add Your Property Details</ng-template>
 
@@ -25,134 +22,95 @@
                         <mat-form-field class="col-lg-6 col-md-10">
                           <mat-label>Property Type</mat-label>
                           <mat-select formControlName="propertyType">
-                            <mat-option
-                              *ngFor="let propertyType of propertyTypes"
-                              [value]="propertyType"
-                            >
+                            <mat-option *ngFor="let propertyType of propertyTypes" [value]="propertyType">
                               {{ propertyType }}
                             </mat-option>
                           </mat-select>
                         </mat-form-field>
-                        <mat-form-field
-                          class="col-lg-6 col-md-10"
-                          hintLabel="Max 20  characters"
-                        >
-                          <input
-                            matInput
-                            #propertyName
-                            formControlName="propertyTitle"
-                            placeholder="Property Title"
-                            required
-                            minlength="5"
-                            maxlength="20"
-                          />
-                          <mat-hint align="end"
-                            >{{ propertyName.value.length }}/20</mat-hint
-                          >
-                          <mat-error
-                            *ngIf="
+                        <mat-form-field class="col-lg-6 col-md-10" hintLabel="Max 20  characters">
+                          <input matInput #propertyName formControlName="propertyTitle" placeholder="Property Title"
+                            required minlength="5" maxlength="20" />
+                          <mat-hint align="end">{{ propertyName.value.length }}/20</mat-hint>
+                          <mat-error *ngIf="
                               firstFormGroup
                                 .get('propertyTitle')
                                 ?.hasError('required')
-                            "
-                            >Property title is required</mat-error
-                          >
-                          <mat-error
-                            *ngIf="
+                            ">Property title is required</mat-error>
+                          <mat-error *ngIf="
                               firstFormGroup
                                 .get('propertyTitle')
                                 ?.hasError('minlength')
-                            "
-                            >Property title must be at least 5
-                            characters</mat-error
-                          >
-                          <mat-error
-                            *ngIf="
+                            ">Property title must be at least 5
+                            characters</mat-error>
+                          <mat-error *ngIf="
                               firstFormGroup
                                 .get('propertyTitle')
                                 ?.hasError('maxlength')
-                            "
-                            >Property title cannot be more than 20
-                            characters</mat-error
-                          >
+                            ">Property title cannot be more than 20
+                            characters</mat-error>
                         </mat-form-field>
                       </div>
 
                       <div class="row">
                         <mat-form-field class="col-lg-6 col-md-10">
-                          <input
-                            matInput
-                            type="number"
-                            formControlName="pricePerNight"
-                            placeholder="Price per night"
-                            required
-                          />
+                          <input matInput type="text" formControlName="pricePerNight" placeholder="Price per night"
+                            required />
                           <span matTextPrefix>$&nbsp;</span>
-                          <mat-error
-                            *ngIf="
+                          <mat-error *ngIf="
                               firstFormGroup
                                 .get('pricePerNight')
                                 ?.hasError('required')
-                            "
-                            >Price per night is required</mat-error
-                          >
-                          <mat-error
-                            *ngIf="
+                            ">Price per night is required</mat-error>
+                          <mat-error *ngIf="
                               firstFormGroup
                                 .get('pricePerNight')
                                 ?.hasError('pattern')
-                            "
-                            >Price per night must be a number</mat-error
-                          >
+                            ">Price per night must be a number</mat-error>
                         </mat-form-field>
 
                         <mat-form-field class="col-lg-6 col-md-10">
-                          <input
-                            mdInput
-                            matInput
-                            type="number"
-                            formControlName="insuranceTax"
-                            placeholder="Insurance tax"
-                            required
-                            placeholder=" Insurance Tax  "
-                          />
+                          <input mdInput matInput type="number" formControlName="insuranceTax"
+                            placeholder="Insurance tax" required placeholder=" Insurance Tax  " />
                           <span matTextPrefix>$&nbsp;</span>
 
-                          <mat-error
-                            *ngIf="
+                          <mat-error *ngIf="
                               firstFormGroup
                                 .get('insuranceTax')
                                 ?.hasError('required')
-                            "
-                            >Insurance tax is required</mat-error
-                          >
+                            ">Insurance tax is required</mat-error>
 
-                          <mat-error
-                            *ngIf="
+                          <mat-error *ngIf="
                               firstFormGroup
                                 .get('insuranceTax')
                                 ?.hasError('pattern')
-                            "
-                            >Insurance tax must be a number</mat-error
-                          >
+                            ">Insurance tax must be a number</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="col-lg-6 col-md-10">
+                          <input matInput type="text" formControlName="guestNumber" placeholder="Number Of Guests"
+                            required />
+                          <span matTextPrefix>$&nbsp;</span>
+                          <mat-error *ngIf="
+                              firstFormGroup
+                                .get('guestNumber')
+                                ?.hasError('required')
+                            ">guest numbers is required</mat-error>
+                          <mat-error *ngIf="
+                              firstFormGroup
+                                .get('guestNumber')
+                                ?.hasError('pattern')
+                            ">guest number must be a number</mat-error>
                         </mat-form-field>
                       </div>
 
                       <div class="row">
                         <mat-form-field class="col-lg-12 col-md-10">
                           <mat-label> Property Description</mat-label>
-                          <textarea
-                            matInput
-                            formControlName="description"
-                            placeholder="Enter a brief description of your property ."
-                            maxlength="250"
-                          ></textarea>
-                          <mat-hint align="end"
-                            >{{
-                              firstFormGroup.get("description")?.value
-                                ?.length || 0
-                            }}/250</mat-hint
-                          >
+                          <textarea matInput formControlName="description"
+                            placeholder="Enter a brief description of your property ." maxlength="250"></textarea>
+                          <mat-hint align="end">{{
+                            firstFormGroup.get("description")?.value
+                            ?.length || 0
+                            }}/250</mat-hint>
                         </mat-form-field>
                       </div>
                     </mat-card-content>
@@ -181,18 +139,10 @@
                     <mat-card-content>
                       <div class="row">
                         <mat-form-field class="col-lg-6 col-md-10">
-                          <mat-label
-                            ><mat-icon>public</mat-icon> Country</mat-label
-                          >
-                          <mat-select
-                            formControlName="country"
-                            required
-                            (selectionChange)="onCountrySelected($event.value)"
-                          >
-                            <mat-option
-                              *ngFor="let country of countries"
-                              [value]="country.name"
-                            >
+                          <mat-label><mat-icon>public</mat-icon> Country</mat-label>
+                          <mat-select formControlName="country" required
+                            (selectionChange)="onCountrySelected($event.value)">
+                            <mat-option *ngFor="let country of countries" [value]="country.value">
                               {{ country.name }}
                             </mat-option>
                           </mat-select>
@@ -201,33 +151,23 @@
                         <mat-form-field class="col-lg-6 col-md-10">
                           <mat-label>City</mat-label>
                           <mat-select formControlName="city" required>
-                            <mat-option
-                              *ngFor="let city of filteredCities"
-                              [value]="city"
-                              >{{ city }}
-                            </mat-option>
+                            <mat-option value="">Select City</mat-option>
+                            <mat-option value="06131d1d-8eb7-414a-a2f9-0e465db109a3">Cairo</mat-option>
+                            <mat-option value="9c7e05b1-286b-48c6-8d54-399c962fb466">Alexandria</mat-option>
+                            <mat-option value="eae5f318-67ef-4d79-b1c8-5f900e7a023b">Luxor</mat-option>
+                            <mat-option value="eae5f318-67ef-4d79-b1c8-5f900e7a023b">Aswan</mat-option>
+                            <mat-option value="a0015668-7a37-4054-8f53-d7bea2ca4cb9">Hurghada</mat-option>
                           </mat-select>
-                          <mat-error
-                            *ngIf="secondFormGroup.get('city')?.invalid"
-                            >Please select a city</mat-error
-                          >
+                          <mat-error *ngIf="secondFormGroup.get('city')?.invalid">Please select a city</mat-error>
                         </mat-form-field>
 
                         <mat-form-field class="col-lg-12 col-md-10">
-                          <input
-                            matInput
-                            formControlName="address"
-                            placeholder="Address"
-                            required
-                          />
-                          <mat-error
-                            *ngIf="
+                          <input matInput formControlName="address" placeholder="Address" required />
+                          <mat-error *ngIf="
                               firstFormGroup
                                 .get('address')
                                 ?.hasError('required')
-                            "
-                            >Address is required</mat-error
-                          >
+                            ">Address is required</mat-error>
                         </mat-form-field>
                       </div>
                     </mat-card-content>
@@ -236,15 +176,11 @@
                     <div class="button-container">
                       <mat-card>
                         <mat-card-actions>
-                         
-                          
-                       
-                          <button    class="stepper-button-left"mat-button matStepperPrevious>Back</button>
-                          <button
-                            mat-button
-                            matStepperNext
-                            class="stepper-button-right"
-                          >
+
+
+
+                          <button class="stepper-button-left" mat-button matStepperPrevious>Back</button>
+                          <button mat-button matStepperNext class="stepper-button-right">
                             Next
                           </button>
                         </mat-card-actions>
@@ -269,23 +205,18 @@
                           <div *ngFor="let amenity of Amenities; let i = index">
                             <mat-checkbox [formControlName]="i">{{
                               amenity
-                            }}</mat-checkbox>
+                              }}</mat-checkbox>
                           </div>
                         </div>
-                      </div></mat-card-content
-                    ></mat-card
-                  >
+                      </div>
+                    </mat-card-content></mat-card>
                   <div class="row">
                     <div class="button-container">
                       <mat-card>
                         <mat-card-actions>
-                          <button    class="stepper-button-left"mat-button matStepperPrevious>Back</button>
+                          <button class="stepper-button-left" mat-button matStepperPrevious>Back</button>
 
-                          <button
-                            mat-button
-                            matStepperNext
-                            class="stepper-button-right"
-                          >
+                          <button mat-button matStepperNext class="stepper-button-right">
                             Next
                           </button>
                         </mat-card-actions>
@@ -309,23 +240,19 @@
                           <div *ngFor="let rule of houseRules; let i = index">
                             <mat-checkbox [formControlName]="i">{{
                               rule
-                            }}</mat-checkbox>
+                              }}</mat-checkbox>
                           </div>
+                          
                         </div>
-                      </div></mat-card-content
-                    ></mat-card
-                  >
+                      </div>
+                    </mat-card-content></mat-card>
                   <div class="row">
                     <div class="button-container">
                       <mat-card>
                         <mat-card-actions>
-                          <button    class="stepper-button-left"mat-button matStepperPrevious>Back</button>
+                          <button class="stepper-button-left" mat-button matStepperPrevious>Back</button>
 
-                          <button
-                            mat-button
-                            matStepperNext
-                            class="stepper-button-right"
-                          >
+                          <button mat-button matStepperNext class="stepper-button-right">
                             Next
                           </button>
                         </mat-card-actions>
@@ -340,61 +267,102 @@
         <mat-step [stepControl]="fifthFormGroup" label="Add Rooms">
 
           <form [formGroup]="fifthFormGroup">
-
-
             <div class="container">
               <div class="row">
                 <div class="col-lg-12 col-md-12">
                   <mat-card>
                     <mat-card-content>
                       <div class="row">
-                        </div>
-                        </mat-card-content>
-                        </mat-card>
-                        <div class="row">
-                          <div class="button-container">
-                            <mat-card>
-                              <mat-card-actions>
-                                <button    class="stepper-button-left"mat-button matStepperPrevious>Back</button>
+                        <mat-form-field class="col-lg-6 col-md-10">
+                          <input matInput type="text" formControlName="noOfBedRooms" placeholder="Number Of Bed Rooms"
+                            required />
+                          <span matTextPrefix>$&nbsp;</span>
+                          <mat-error *ngIf="
+                              firstFormGroup
+                                .get('NoOfBedRooms')
+                                ?.hasError('required')
+                            ">Number Of Bedrooms Is Required</mat-error>
+                          <mat-error *ngIf="
+                              firstFormGroup
+                                .get('NoOfBedRooms')
+                                ?.hasError('pattern')
+                            ">Number Of Bedrooms must be a number</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="col-lg-6 col-md-10">
+                          <input matInput type="text" formControlName="noOfBeds" placeholder="Number Of Beds"
+                            required />
+                          <span matTextPrefix>$&nbsp;</span>
+                          <mat-error *ngIf="
+                              firstFormGroup
+                                .get('NoOfBeds')
+                                ?.hasError('required')
+                            ">Number Of Bedrooms Is Required</mat-error>
+                          <mat-error *ngIf="
+                              firstFormGroup
+                                .get('NoOfBeds')
+                                ?.hasError('pattern')
+                            ">Number Of Beds must be a number</mat-error>
+                        </mat-form-field>
+                        
+                        <mat-form-field class="col-lg-6 col-md-10">
+                          <input matInput type="text" formControlName="noOfBathRooms" placeholder="Number Of Bathrooms"
+                            required />
+                          <span matTextPrefix>$&nbsp;</span>
+                          <mat-error *ngIf="
+                              firstFormGroup
+                                .get('NoOfBathRooms')
+                                ?.hasError('required')
+                            ">Number Of Bedrooms Is Required</mat-error>
+                          <mat-error *ngIf="
+                              firstFormGroup
+                                .get('NoOfBathRooms')
+                                ?.hasError('pattern')
+                            ">Number Of BathRooms must be a number</mat-error>
+                        </mat-form-field>
+                        
+                      </div>
+                    </mat-card-content>
+                  </mat-card>
+                  <div class="row">
+                    <div class="button-container">
+                      <mat-card>
+                        <mat-card-actions>
+                          <button class="stepper-button-left" mat-button matStepperPrevious>Back</button>
 
-                                <button
-                                  mat-button
-                                  matStepperNext
-                                  class="stepper-button-right"
-                                >
-                                  Next
-                                </button>
-                              </mat-card-actions>
-                            </mat-card>
-                          </div>
-                        </div>
-                        </div>
-                        </div>
-                        </div>
+                          <button mat-button matStepperNext class="stepper-button-right">
+                            Next
+                          </button>
+                        </mat-card-actions>
+                      </mat-card>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </form>
-          </mat-step>
-        
+        </mat-step>
+
         <mat-step>
           <ng-template matStepLabel>Done</ng-template>
-       
-       <div class ="alert alert-success ">
-        <p>Congratulations ! You are now done Adding your property ..</p>
-       </div>  
+
+          <div class="alert alert-success ">
+            <p>Congratulations ! You are now done Adding your property ..</p>
+          </div>
           <div class="row">
             <div class="button-container">
               <mat-card>
                 <mat-card-actions>
 
-    <div class="button-container">
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button matstepperSave  >Save</button>
-    
+                  <div class="button-container">
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matstepperSave (click)="save()">Save</button>
+
+                  </div>
+                </mat-card-actions>
+              </mat-card>
+            </div>
           </div>
-  </mat-card-actions>
-</mat-card>
-</div>
-</div>
-      
+
         </mat-step>
       </mat-stepper>
     </div>

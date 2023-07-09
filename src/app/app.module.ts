@@ -26,7 +26,7 @@ import {
   MatDialogModule,
   MAT_DIALOG_DEFAULT_OPTIONS,
 } from "@angular/material/dialog";
-import { HttpClientModule } from "@angular/common/http";
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { ErrorComponent } from "./Cpmponents/error/error.component";
 import { RouterModule,Routes,ROUTES } from "@angular/router";
 import { AddPropertyComponent } from "./Cpmponents/add-property/add-property.component";
@@ -46,6 +46,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { MatStepperModule } from '@angular/material/stepper';
 import { ReservationsComponent } from './Cpmponents/reservations/reservations.component';
+import { AuthenticationInterceptor } from "./interceptions/authentication.interceptor";
 
 let routes:Routes=[
   {path:'add-property' , component: AddPropertyComponent  },
@@ -107,7 +108,15 @@ let routes:Routes=[
     MatStepperModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [{ provide: MatDialogRef, useValue: {} }],
+  providers: 
+  [
+    { provide: MatDialogRef, useValue: {} },
+    {
+      provide:HTTP_INTERCEPTORS, 
+      useClass:AuthenticationInterceptor,
+      multi:true,
+    }
+  ],
 
   bootstrap: [AppComponent],
 })
