@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './reservations.component.html',
 })
 export class ReservationsComponent {
-
+  
 }
